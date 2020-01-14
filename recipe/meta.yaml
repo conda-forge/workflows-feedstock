@@ -21,7 +21,7 @@ requirements:
     - python
     - setuptools
     - six
-    - stomp.py
+    - stomp.py <5.0
 
 test:
   imports:
