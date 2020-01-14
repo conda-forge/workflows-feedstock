@@ -1,5 +1,5 @@
 {% set name = "workflows" %}
-{% set version = "1.7.1" %}
+{% set version = "1.7.2" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a0464e26b29e0494c0770cefef5be3d3b5bf995e85408bf5629cd05b15cddf44
+  sha256: 21ed4c39a495c34fd055c52a67dbe3d88e417a09b289bdf1aaa3d3db9568d146
 build:
   number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv "
@@ -21,7 +21,7 @@ requirements:
     - python
     - setuptools
     - six
-    - stomp.py
+    - stomp.py <5.0
 
 test:
   imports:
