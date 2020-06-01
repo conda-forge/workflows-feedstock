@@ -1,5 +1,5 @@
 {% set name = "workflows" %}
-{% set version = "1.7.2" %}
+{% set version = "2.0" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,9 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 21ed4c39a495c34fd055c52a67dbe3d88e417a09b289bdf1aaa3d3db9568d146
+  sha256: 923c7aea841ab3cff95710d6d72e0c1a472bec0e94fc9c524a19f9e2303787ab
 build:
-  number: 1
+  noarch: python
+  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv "
 
 requirements:
@@ -17,11 +18,9 @@ requirements:
     - pip
     - python
   run:
-    - enum34  # [py2k]
     - python
     - setuptools
-    - six
-    - stomp.py <5.0
+    - stomp.py
 
 test:
   imports:
@@ -36,7 +35,7 @@ test:
 
 about:
   home: https://github.com/DiamondLightSource/python-workflows
-  license: BSD
+  license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
   summary: Data processing in distributed environments
