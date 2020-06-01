@@ -35,7 +35,7 @@ test:
 
 about:
   home: https://github.com/DiamondLightSource/python-workflows
-  license: BSD
+  license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
   summary: Data processing in distributed environments
