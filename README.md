@@ -5,7 +5,7 @@ Home: https://github.com/DiamondLightSource/python-workflows
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Data processing in distributed environments
 

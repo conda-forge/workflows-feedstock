@@ -1,17 +1,17 @@
 {% set name = "workflows" %}
-{% set version = "2.0" %}
+{% set version = "2.1" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 923c7aea841ab3cff95710d6d72e0c1a472bec0e94fc9c524a19f9e2303787ab
+  sha256: 0f6ceb91fc22559c7cd9cfaf3cfb76fe4ac5559f35d7c2a5c39648660adbe377
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv "
+  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv '
 
 requirements:
   host:
