@@ -11,14 +11,16 @@ source:
 build:
   noarch: python
   number: 0
-  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv '
+  entry_points:
+    - workflows.validate_recipe = workflows.recipe.validate:main
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python
+    - python >=3.6
   run:
-    - python
+    - python >=3.6
     - setuptools
     - stomp.py
 
@@ -32,6 +34,11 @@ test:
     - workflows.services
     - workflows.transport
     - workflows.util
+  commands:
+    - pip check
+    - workflows.validate_recipe --help
+  requires:
+    - pip
 
 about:
   home: https://github.com/DiamondLightSource/python-workflows
