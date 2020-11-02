@@ -1,5 +1,5 @@
 {% set name = "workflows" %}
-{% set version = "2.1" %}
+{% set version = "2.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,18 +7,20 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0f6ceb91fc22559c7cd9cfaf3cfb76fe4ac5559f35d7c2a5c39648660adbe377
+  sha256: 2d25027ef19ef8dba20f79046486744b9d91a72fed64ebf88bb914c8f3a1538d
 build:
   noarch: python
   number: 0
-  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv '
+  entry_points:
+    - workflows.validate_recipe = workflows.recipe.validate:main
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python
+    - python >=3.6
   run:
-    - python
+    - python >=3.6
     - setuptools
     - stomp.py
 
@@ -32,6 +34,11 @@ test:
     - workflows.services
     - workflows.transport
     - workflows.util
+  commands:
+    - pip check
+    - workflows.validate_recipe --help
+  requires:
+    - pip
 
 about:
   home: https://github.com/DiamondLightSource/python-workflows
