@@ -1,5 +1,5 @@
 {% set name = "workflows" %}
-{% set version = "2.3" %}
+{% set version = "2.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 155587805a6fb57470093e0397e9343ea207c040a03dda5eeac420c1567ed73e
+  sha256: 6de6b4f59c6481e7210014c7a7b884b3c757c8c9b5b9a5e9ae39a7c3aa1a5df4
 build:
   noarch: python
   number: 0
@@ -20,6 +20,7 @@ requirements:
     - pip
     - python >=3.6
   run:
+    - pika
     - python >=3.6
     - setuptools
     - stomp.py
@@ -41,7 +42,7 @@ test:
     - pip
 
 about:
-  home: https://github.com/DiamondLightSource/python-workflows
+  home: https://pypi.python.org/pypi/workflows
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
