@@ -1,7 +1,7 @@
 About workflows
 ===============
 
-Home: https://github.com/DiamondLightSource/python-workflows
+Home: https://pypi.python.org/pypi/workflows
 
 Package license: BSD-3-Clause
 
