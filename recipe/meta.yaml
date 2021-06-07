@@ -1,5 +1,5 @@
 {% set name = "workflows" %}
-{% set version = "2.8" %}
+{% set version = "2.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e3cb4af6a29201fea15aa77ba535c56935e4ca93ad16f2f1a80caa0c5f4950cd
+  sha256: a35be192aa9fd4139156e55b24dd214bb8be97b3f067d5e2f0906a4ce5451651
 build:
   noarch: python
   number: 0
@@ -23,7 +23,7 @@ requirements:
     - pika
     - python >=3.6
     - setuptools
-    - stomp.py <6.1.1
+    - stomp.py >=7.0
 
 test:
   imports:
