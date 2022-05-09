@@ -1,5 +1,5 @@
 {% set name = "workflows" %}
-{% set version = "2.21.1" %}
+{% set version = "2.22" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0fed5b23d283ca4774fe5c5fdb319249ce658adad0d4549e96ceafce79ed14b1
+  sha256: 9ad3d232c1d8ce204fead576e260cedd2dbdcc5e76eb5aacab29ed1ee0bae602
 build:
   noarch: python
   number: 0
