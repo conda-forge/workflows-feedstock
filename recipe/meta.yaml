@@ -24,6 +24,7 @@ requirements:
     - bidict
     - pika
     - python >=3.8
+    - setuptools
     - stomp.py >=7.0
 
 test:
