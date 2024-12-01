@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 90801b705dbd94333a1585ef4cd55539ee76627c3678610482870ab89da43bf4
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - workflows.validate_recipe = workflows.recipe.validate:main
   script: {{ PYTHON }} -m pip install . -vv
@@ -18,12 +18,12 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.10
+    - python {{ python_min }}
     - setuptools
   run:
     - bidict
     - pika
-    - python >=3.8
+    - python >={{ python_min }}
     - setuptools
     - stomp.py >=7.0
 
@@ -42,6 +42,7 @@ test:
     - workflows.validate_recipe --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://pypi.python.org/pypi/workflows
