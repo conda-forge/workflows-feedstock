@@ -23,6 +23,9 @@ requirements:
     - setuptools
   run:
     - bidict
+    - opentelemetry-api
+    - opentelemetry-exporter-otlp-proto-http
+    - opentelemetry-sdk
     - pika
     - python >={{ python_min }}
     - setuptools
