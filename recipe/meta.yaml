@@ -1,6 +1,6 @@
 {% set name = "workflows" %}
 {% set version = "3.4" %}
-{% set python_min = "3.10" %}
+{% set python_min = "3.12" %}
 
 package:
   name: {{ name|lower }}
