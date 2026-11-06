@@ -1,5 +1,5 @@
 {% set name = "workflows" %}
-{% set version = "3.7" %}
+{% set version = "3.8" %}
 {% set python_min = "3.12" %}
 
 package:
@@ -7,8 +7,8 @@ package:
   version: "{{ version }}"
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 30ebf61e206e84ce687aa2ab43a3037ce66e7db78e5caa9ad12f9489acc097ba
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 9c2964ea98adadb930886dccf33ce3e9748e8ddc57f474bb5b1921831bcd6d05
 build:
   noarch: python
   number: 0
