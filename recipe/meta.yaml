@@ -27,6 +27,7 @@ requirements:
     - opentelemetry-exporter-otlp-proto-http
     - opentelemetry-sdk
     - pika
+    - pydantic >=2
     - python >={{ python_min }}
     - setuptools
     - stomp.py >=7.0
